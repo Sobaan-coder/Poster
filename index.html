@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Walima Invitation · دعوتِ ولیمہ</title>
+  <meta name="description" content="You are cordially invited to a Walima celebration. Tap to open your invitation.">
+  <meta name="theme-color" content="#063B2E">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Link preview (WhatsApp / social). After deploying, og:image must be a FULL https URL —
+       the Netlify build step in netlify.toml fills it in automatically (see README). -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="You are cordially invited · Walima Celebration">
+  <meta property="og:description" content="Tap to open your invitation · دعوتِ ولیمہ">
+  <meta property="og:image" content="https://sobaan-coder.github.io/Poster/assets/og-image.jpg">
+  <meta property="og:url" content="https://sobaan-coder.github.io/Poster/">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Great+Vibes&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap">
+  <!-- Amiri is only needed for the Bismillah, so request just those letters -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap&text=%D8%A8%D9%90%D8%B3%D9%92%D9%85%D9%90%20%D9%B1%D9%84%D9%84%D9%91%D9%8E%D9%B0%D9%87%D9%90%20%D9%B1%D9%84%D8%B1%D9%91%D9%8E%D8%AD%D9%92%D9%85%D9%8E%D9%B0%D9%86%D9%90%20%D9%B1%D9%84%D8%B1%D9%91%D9%8E%D8%AD%D9%90%D9%8A%D9%85%D9%90">
+  <link rel="preload" href="assets/medallion.svg" as="image">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.className = "js";</script>
+  <script src="config.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Shared vector parts (kept in the page so gold gradients render everywhere) -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="g-gold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#8C6B2F"/><stop offset=".28" stop-color="#E5CE91"/>
+        <stop offset=".5" stop-color="#B99A59"/><stop offset=".72" stop-color="#F3E2AE"/>
+        <stop offset="1" stop-color="#9A7A3A"/>
+      </linearGradient>
+      <symbol id="arch" viewBox="0 -30 400 250">
+        <path d="M20 220V128C20 78 118 70 166 46C184 37 195 24 200 8C205 24 216 37 234 46C282 70 380 78 380 128V220" fill="none" stroke="url(#g-gold)" stroke-width="2.4" vector-effect="non-scaling-stroke"/>
+        <path d="M30 220V131C30 87 122 79 170 56C187 48 196 37 200 24C204 37 213 48 230 56C278 79 370 87 370 131V220" fill="none" stroke="url(#g-gold)" stroke-width="1.1" vector-effect="non-scaling-stroke"/>
+        <path d="M200 8c-6-10-2-20 0-24 2 4 6 14 0 24z" fill="url(#g-gold)"/><circle cx="200" cy="-21" r="2.8" fill="url(#g-gold)"/>
+      </symbol>
+      <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="16" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+      <symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4.5h4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.1-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.9 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.8" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+      <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+      <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.8 8.3c.2-.5.5-.5.8-.5h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2 0 .4-.1.6l-.4.5c-.1.1-.2.3 0 .5.4.7 1.6 2 2.9 2.5.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.2.1.4.2.4.4 0 .7-.4 1.4-1 1.7-.6.3-1.6.4-3.4-.4-2.2-1-3.7-3.3-3.9-3.6-.2-.3-.9-1.3-.9-2.4 0-.6.1-1 .4-1.6z" fill="currentColor"/></symbol>
+      <symbol id="i-up" viewBox="0 0 24 24"><path d="M6 14l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ============ SCENE A / B : 3D OPENING ============ -->
+  <div class="intro" id="intro" role="dialog" aria-modal="true" aria-labelledby="intro-label">
+    <canvas class="particles" id="particles-intro" aria-hidden="true"></canvas>
+    <div class="intro-glow" aria-hidden="true"></div>
+    <div class="royal-frame" aria-hidden="true">
+      <img class="rf-corner rf-tl" src="assets/floral-corner.svg" alt="">
+      <img class="rf-corner rf-tr" src="assets/floral-corner.svg" alt="">
+      <img class="rf-corner rf-bl" src="assets/floral-corner.svg" alt="">
+      <img class="rf-corner rf-br" src="assets/floral-corner.svg" alt="">
+    </div>
+
+    <h1 class="sr-only" id="intro-label">Walima invitation</h1>
+
+    <div class="stage" id="stage">
+      <div class="camera" id="camera">
+        <div class="card3d" id="card3d" role="button" tabindex="0" aria-label="Open your invitation">
+          <!-- inner ivory invitation, revealed when the doors open -->
+          <div class="paper inner-card" aria-hidden="true">
+            <div class="gframe gframe-outer"><i class="t"></i><i class="r"></i><i class="b"></i><i class="l"></i></div>
+            <div class="gframe gframe-inner"><i class="t"></i><i class="r"></i><i class="b"></i><i class="l"></i></div>
+            <img class="corner c-tl" src="assets/floral-corner-ivory.svg" alt="">
+            <img class="corner c-tr" src="assets/floral-corner-ivory.svg" alt="">
+            <img class="corner c-bl" src="assets/floral-corner-ivory.svg" alt="">
+            <img class="corner c-br" src="assets/floral-corner-ivory.svg" alt="">
+            <div class="inner-content">
+              <p class="bismillah" lang="ar" dir="rtl">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+              <img class="inner-bouquet" src="assets/floral-bouquet-ivory.svg" alt="">
+              <p class="inner-kicker" data-t="walimaCelebration">Walima Celebration</p>
+              <p class="names names-ivory">
+                <span class="name" data-bind="bride"></span>
+                <span class="amp" data-bind="amp">&amp;</span>
+                <span class="name" data-bind="groom"></span>
+              </p>
+              <p class="inner-ur" lang="ur" dir="rtl">دعوتِ ولیمہ</p>
+            </div>
+            <div class="shimmer"></div>
+          </div>
+
+          <!-- the closed card: two "palace doors" -->
+          <div class="door door-left">
+            <div class="door-face"><div class="front" data-front></div></div>
+            <div class="door-back"></div>
+          </div>
+          <div class="door door-right">
+            <div class="door-face"><div class="front" data-front></div></div>
+            <div class="door-back"></div>
+          </div>
+          <div class="seal"><img src="assets/medallion.svg" alt=""><span lang="ur">و</span></div>
+        </div>
+        <div class="card-shadow" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <div class="intro-actions">
+      <button class="btn btn-gold btn-open" id="open-btn" type="button"><span data-t="open">Open your invitation</span></button>
+      <p class="intro-hint" data-t="tapHint">Tap the card or the button</p>
+    </div>
+    <button class="btn-skip" id="skip-btn" type="button" hidden data-t="skip">Skip</button>
+  </div>
+
+  <!-- template for the front of the closed card (copied into both doors) -->
+  <template id="front-tpl">
+    <div class="front-inner">
+      <svg class="front-arch" viewBox="0 -30 400 250" aria-hidden="true"><use href="#arch"/></svg>
+      <div class="front-legs"></div>
+      <img class="fc fc-tl" src="assets/floral-corner.svg" alt="">
+      <img class="fc fc-tr" src="assets/floral-corner.svg" alt="">
+      <img class="fc fc-bl" src="assets/floral-corner.svg" alt="">
+      <img class="fc fc-br" src="assets/floral-corner.svg" alt="">
+      <div class="front-text">
+        <p class="front-kicker" lang="en">You are cordially invited</p>
+        <p class="front-title gold-text" lang="en">Walima</p>
+        <p class="front-sub" lang="en">Celebration</p>
+        <p class="front-ur" lang="ur" dir="rtl">دعوتِ ولیمہ</p>
+      </div>
+    </div>
+  </template>
+
+  <!-- ============ FLOATING CONTROLS ============ -->
+  <div class="controls" id="controls">
+    <button class="ctrl ctrl-lang" id="lang-btn" type="button" aria-label="Switch language"><span class="lang-en">EN</span><span class="lang-sep">|</span><span class="lang-ur" lang="ur">اردو</span></button>
+    <button class="ctrl" id="music-btn" type="button" aria-pressed="false" aria-label="Music"><svg><use href="#i-music"/></svg><span class="slash"></span></button>
+    <button class="ctrl" id="replay-btn" type="button" aria-label="Replay introduction"><svg><use href="#i-replay"/></svg></button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" dir="auto"></div>
+
+  <!-- ============ PREVIEW RIBBON + CHECKLIST (preview mode only) ============ -->
+  <div class="preview-ribbon" id="preview-ribbon" hidden>
+    <span data-t="previewRibbon">Preview mode — some details are still pending</span>
+    <button type="button" id="checklist-btn" data-t="checklist">Checklist</button>
+  </div>
+  <dialog class="checklist" id="checklist" aria-labelledby="checklist-title">
+    <form method="dialog">
+      <h2 id="checklist-title" data-t="checklistTitle">Pre-launch checklist</h2>
+      <p class="checklist-note" data-t="checklistNote"></p>
+      <ul id="checklist-list"></ul>
+      <button class="btn btn-gold" value="close" data-t="close">Close</button>
+    </form>
+  </dialog>
+
+  <main id="main">
+    <!-- ============ SECTION 1 · COVER ============ -->
+    <section class="section cover" id="cover">
+      <canvas class="particles" id="particles-cover" aria-hidden="true"></canvas>
+      <div class="pattern" data-parallax="0.12" aria-hidden="true"></div>
+      <img class="cover-corner cc-tl" src="assets/floral-corner.svg" alt="" data-parallax="-0.08">
+      <img class="cover-corner cc-tr" src="assets/floral-corner.svg" alt="" data-parallax="-0.08">
+      <div class="cover-card-wrap" id="cover-tilt">
+        <div class="paper hero-card" id="hero-card">
+          <div class="gframe gframe-outer"><i class="t"></i><i class="r"></i><i class="b"></i><i class="l"></i></div>
+          <div class="gframe gframe-inner"><i class="t"></i><i class="r"></i><i class="b"></i><i class="l"></i></div>
+          <img class="corner c-tl" src="assets/floral-corner-ivory.svg" alt="">
+          <img class="corner c-tr" src="assets/floral-corner-ivory.svg" alt="">
+          <img class="corner c-bl" src="assets/floral-corner-ivory.svg" alt="">
+          <img class="corner c-br" src="assets/floral-corner-ivory.svg" alt="">
+          <div class="hero-content">
+            <p class="bismillah" lang="ar" dir="rtl">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+            <img class="hero-bouquet" src="assets/floral-bouquet-ivory.svg" alt="">
+            <p class="hero-kicker" data-txt="introCordially"></p>
+            <h2 class="hero-title"><span data-t="walimaWord">Walima</span></h2>
+            <p class="names names-ivory names-hero">
+              <span class="name" data-bind="bride"></span>
+              <span class="amp" data-bind="amp">&amp;</span>
+              <span class="name" data-bind="groom"></span>
+            </p>
+            <p class="family-line" data-bind="family"></p>
+            <img class="flourish" src="assets/flourish.svg" alt="">
+            <p class="hero-date" data-bind="dateLine"></p>
+          </div>
+          <div class="shimmer"></div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#invitation"><span data-t="scroll">Scroll</span><svg><use href="#i-up"/></svg></a>
+    </section>
+
+    <!-- ============ SECTION 2 · MAIN INVITATION ============ -->
+    <section class="section invitation" id="invitation">
+      <div class="pattern" data-parallax="0.1" aria-hidden="true"></div>
+      <article class="emerald-card" data-reveal="tilt">
+        <img class="ec-corner ec-tl" src="assets/floral-corner.svg" alt="">
+        <img class="ec-corner ec-tr" src="assets/floral-corner.svg" alt="">
+        <img class="ec-corner ec-bl" src="assets/floral-corner.svg" alt="">
+        <img class="ec-corner ec-br" src="assets/floral-corner.svg" alt="">
+        <div class="arch">
+          <svg class="arch-crown" viewBox="0 -30 400 250" aria-hidden="true"><use href="#arch"/></svg>
+          <div class="arch-legs" aria-hidden="true"></div>
+          <div class="arch-body">
+            <img class="arch-bouquet" src="assets/floral-bouquet.svg" alt="" data-reveal style="--d:.1s">
+            <p class="bismillah bismillah-gold" lang="ar" dir="rtl" data-reveal style="--d:.2s">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+            <p class="bismillah-tr" data-txt="bismillahTranslation" data-reveal style="--d:.3s"></p>
+            <img class="flourish" src="assets/flourish.svg" alt="" data-reveal style="--d:.35s">
+            <p class="lead" data-txt="invitationLead" data-reveal style="--d:.4s"></p>
+            <p class="names names-emerald" data-reveal style="--d:.5s">
+              <span class="name" data-bind="bride"></span>
+              <span class="name-family" data-bind="familyBride"></span>
+              <span class="amp" data-bind="amp">&amp;</span>
+              <span class="name" data-bind="groom"></span>
+              <span class="name-family" data-bind="familyGroom"></span>
+            </p>
+            <p class="family-line family-emerald" data-bind="familySeparate" data-reveal style="--d:.55s"></p>
+            <p class="close-line" data-txt="invitationClose" data-reveal style="--d:.6s"></p>
+            <img class="flourish" src="assets/flourish.svg" alt="" data-reveal style="--d:.65s">
+            <h2 class="event-caps gold-text" data-txt="eventTitle" data-reveal style="--d:.7s"></h2>
+            <dl class="mini-details" data-reveal style="--d:.8s">
+              <div><dt data-t="date">Date</dt><dd data-bind="date"></dd></div>
+              <div><dt data-t="time">Time</dt><dd data-bind="time"></dd></div>
+              <div><dt data-t="venue">Venue</dt><dd data-bind="venueName"></dd></div>
+            </dl>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ SECTION 3 · EVENT DETAILS ============ -->
+    <section class="section details" id="details">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow" data-t="detailsEyebrow">The Celebration</p>
+        <h2 class="section-title" data-t="detailsTitle">Walima Details</h2>
+        <img class="flourish" src="assets/flourish.svg" alt="">
+      </header>
+      <div class="event-card" data-reveal style="--d:.15s">
+        <div class="event-card-glint" aria-hidden="true"></div>
+        <img class="event-medal" src="assets/medallion.svg" alt="">
+        <h3 class="event-name" data-txt="eventTitle"></h3>
+        <ul class="event-rows">
+          <li><svg><use href="#i-cal"/></svg><div><span class="row-label" data-t="date">Date</span><span class="row-value" data-bind="date"></span></div></li>
+          <li><svg><use href="#i-clock"/></svg><div><span class="row-label" data-t="time">Time</span><span class="row-value" data-bind="time"></span><span class="row-sub" data-bind="tz"></span></div></li>
+          <li><svg><use href="#i-pin"/></svg><div><span class="row-label" data-t="venue">Venue</span><span class="row-value" data-bind="venueName"></span><span class="row-sub" data-bind="venueAddress"></span></div></li>
+        </ul>
+        <a class="btn btn-gold js-directions" href="#" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg><span data-t="directions">Get directions</span></a>
+        <p class="muted js-directions-pending" data-t="directionsPending" hidden></p>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 4 · COUNTDOWN ============ -->
+    <section class="section countdown" id="countdown">
+      <div class="pattern" aria-hidden="true"></div>
+      <header class="section-head" data-reveal>
+        <p class="eyebrow" data-t="countdownEyebrow">Counting the moments</p>
+        <h2 class="section-title" data-t="countdownTitle">Until the Walima</h2>
+        <img class="flourish" src="assets/flourish.svg" alt="">
+      </header>
+      <div class="timer" id="timer" data-reveal style="--d:.15s" hidden>
+        <div class="unit"><span class="num" data-unit="d">00</span><span class="lbl" data-t="days">Days</span></div>
+        <div class="unit"><span class="num" data-unit="h">00</span><span class="lbl" data-t="hours">Hours</span></div>
+        <div class="unit"><span class="num" data-unit="m">00</span><span class="lbl" data-t="minutes">Minutes</span></div>
+        <div class="unit"><span class="num" data-unit="s">00</span><span class="lbl" data-t="seconds">Seconds</span></div>
+      </div>
+      <p class="timer-note" id="timer-note" data-reveal style="--d:.2s"></p>
+    </section>
+
+    <!-- ============ SECTION 5 · VENUE ============ -->
+    <section class="section venue" id="venue">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow" data-t="venueEyebrow">Finding your way</p>
+        <h2 class="section-title" data-t="venueTitle">Venue &amp; Directions</h2>
+        <img class="flourish" src="assets/flourish.svg" alt="">
+      </header>
+      <div class="venue-card" data-reveal style="--d:.15s">
+        <svg class="venue-arch" viewBox="0 -30 400 250" aria-hidden="true"><use href="#arch"/></svg>
+        <div class="venue-body">
+          <h3 class="venue-name" data-bind="venueName"></h3>
+          <p class="venue-address" data-bind="venueAddress"></p>
+          <div class="venue-actions">
+            <a class="btn btn-gold js-directions" href="#" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg><span data-t="openMaps">Open in Google Maps</span></a>
+            <button class="btn btn-ghost" id="map-btn" type="button" hidden data-t="showMap">Show map</button>
+          </div>
+          <p class="muted js-directions-pending" data-t="directionsPending" hidden></p>
+          <div class="map-frame" id="map-frame" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 6 · RSVP ============ -->
+    <section class="section rsvp" id="rsvp">
+      <div class="pattern" aria-hidden="true"></div>
+      <header class="section-head" data-reveal>
+        <p class="eyebrow" data-t="rsvpEyebrow">RSVP</p>
+        <h2 class="section-title" data-t="rsvpTitle">Kindly Respond</h2>
+        <img class="flourish" src="assets/flourish.svg" alt="">
+        <p class="section-intro" data-t="rsvpIntro"></p>
+        <p class="section-intro deadline" data-bind="deadline"></p>
+      </header>
+      <form class="rsvp-card" id="rsvp-form" novalidate data-reveal style="--d:.15s">
+        <label class="field">
+          <span data-t="yourName">Your name</span>
+          <input type="text" name="name" id="rsvp-name" autocomplete="name" maxlength="80" required>
+          <small class="field-error" id="name-error" data-t="nameError" hidden></small>
+        </label>
+        <fieldset class="field">
+          <legend data-t="willAttend">Will you attend?</legend>
+          <div class="choice">
+            <label><input type="radio" name="attending" value="yes" checked><span data-t="yes">Yes, with pleasure</span></label>
+            <label><input type="radio" name="attending" value="no"><span data-t="no">Regretfully, I cannot attend</span></label>
+          </div>
+        </fieldset>
+        <div class="field" id="guests-field">
+          <span id="guests-label" data-t="guests">Number of attendees</span>
+          <div class="stepper" role="group" aria-labelledby="guests-label">
+            <button type="button" class="step" data-step="-1" aria-label="−">−</button>
+            <input type="number" name="guests" id="rsvp-guests" value="1" min="1" inputmode="numeric" aria-labelledby="guests-label">
+            <button type="button" class="step" data-step="1" aria-label="+">+</button>
+          </div>
+        </div>
+        <label class="field">
+          <span data-t="message">Message (optional)</span>
+          <textarea name="message" id="rsvp-message" rows="3" maxlength="300"></textarea>
+        </label>
+        <a class="btn btn-gold btn-wa" id="rsvp-btn" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span data-t="rsvpBtn">Confirm attendance on WhatsApp</span></a>
+        <p class="rsvp-note" id="rsvp-note" data-t="rsvpNote"></p>
+      </form>
+    </section>
+
+    <!-- ============ SECTION 7 · CLOSING ============ -->
+    <section class="section closing" id="closing">
+      <div class="pattern" data-parallax="0.1" aria-hidden="true"></div>
+      <div class="closing-card emerald-card" data-reveal="tilt">
+        <img class="ec-corner ec-tl" src="assets/floral-corner.svg" alt="">
+        <img class="ec-corner ec-tr" src="assets/floral-corner.svg" alt="">
+        <img class="ec-corner ec-bl" src="assets/floral-corner.svg" alt="">
+        <img class="ec-corner ec-br" src="assets/floral-corner.svg" alt="">
+        <div class="closing-body">
+          <img class="closing-bouquet" src="assets/floral-bouquet.svg" alt="">
+          <h2 class="closing-title gold-text" data-txt="closingTitle"></h2>
+          <p class="closing-line" data-txt="closingLine"></p>
+          <p class="closing-line closing-ur" lang="ur" dir="rtl" data-bind="closingUrdu"></p>
+          <p class="names names-emerald names-closing">
+            <span class="name" data-bind="bride"></span>
+            <span class="amp" data-bind="amp">&amp;</span>
+            <span class="name" data-bind="groom"></span>
+          </p>
+          <img class="flourish" src="assets/flourish.svg" alt="">
+        </div>
+      </div>
+      <a class="btn btn-ghost back-top" href="#cover" id="back-top"><svg><use href="#i-up"/></svg><span data-t="backToTop">Back to top</span></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/flourish.svg" alt="" width="200" height="30">
+    <p><span data-t="walimaWord">Walima</span> · <span lang="ur">ولیمہ</span></p>
+  </footer>
+
+  <noscript><p class="noscript">Please enable JavaScript to open this invitation.</p></noscript>
+</body>
+</html>

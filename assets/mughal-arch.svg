@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -30 400 250" ><defs>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#8C6B2F"/><stop offset=".28" stop-color="#E5CE91"/>
+    <stop offset=".5" stop-color="#B99A59"/><stop offset=".72" stop-color="#F3E2AE"/>
+    <stop offset="1" stop-color="#9A7A3A"/>
+  </linearGradient>
+  <radialGradient id="petal" cx=".5" cy=".9" r=".9">
+    <stop offset="0" stop-color="#EFE6D2"/><stop offset="1" stop-color="#FFFFFF"/>
+  </radialGradient>
+  <radialGradient id="petalInner" cx=".5" cy=".9" r=".9">
+    <stop offset="0" stop-color="#E4D7BA"/><stop offset="1" stop-color="#FFFDF8"/>
+  </radialGradient>
+  <linearGradient id="leafFill" x1="0" y1="1" x2="0" y2="0">
+    <stop offset="0" stop-color="#D8CDB2"/><stop offset="1" stop-color="#F7F1E6"/>
+  </linearGradient>
+</defs><path d="M20 220V128C20 78 118 70 166 46C184 37 195 24 200 8C205 24 216 37 234 46C282 70 380 78 380 128V220" fill="none" stroke="url(#gold)" stroke-width="2.4"/>
+  <path d="M30 220V131C30 87 122 79 170 56C187 48 196 37 200 24C204 37 213 48 230 56C278 79 370 87 370 131V220" fill="none" stroke="url(#gold)" stroke-width="1.1"/>
+  <path d="M200 8c-6-10-2-20 0-24 2 4 6 14 0 24z" fill="url(#gold)"/><circle cx="200" cy="-20" r="2.6" fill="url(#gold)"/></svg>
