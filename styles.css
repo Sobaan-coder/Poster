@@ -242,7 +242,7 @@ html.js .intro {
 .door {
   position: absolute; top: 0; width: 50%; height: 100%;
   transform-style: preserve-3d;
-  transition: transform 1.6s var(--ease-royal) .35s;
+  transition: transform 1.6s var(--ease-royal) .6s;
 }
 .door-left { left: 0; transform-origin: 0 50%; }
 .door-right { right: 0; transform-origin: 100% 50%; }
@@ -305,9 +305,42 @@ html.js .intro {
 .front-sub { font-family: "Cinzel", Georgia, serif; font-size: 4.4cqw; letter-spacing: .42em; text-transform: uppercase; color: var(--ivory); margin-top: -1cqw; }
 .front-ur { font-family: var(--f-ur); font-size: 6cqw; color: var(--ivory); line-height: 2.1; margin-top: 2cqw; }
 
+/* satin ribbon + bow */
+.ribbon { position: absolute; inset: 0; transform-style: preserve-3d; pointer-events: none; }
+.band {
+  position: absolute; top: 75.6%; height: 6.8%; overflow: hidden;
+  background: linear-gradient(180deg, #F6E9C2 0%, #E2C88A 30%, #C9A862 62%, #A07E3C 100%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .4), inset 0 1px 0 rgba(255, 255, 255, .65), inset 0 -1px 0 rgba(90, 64, 20, .45);
+  transform: translateZ(1.5px);
+  transition: transform .75s cubic-bezier(.55, 0, .8, .2), opacity .5s ease .25s;
+}
+.band-l { left: -1.5%; right: 50%; border-radius: 2px 0 0 2px; }
+.band-r { left: 50%; right: -1.5%; border-radius: 0 2px 2px 0; }
+.band::before { /* stitched edges */
+  content: ""; position: absolute; left: 0; right: 0; top: 14%; bottom: 14%;
+  border-top: 1px dashed rgba(122, 92, 37, .55); border-bottom: 1px dashed rgba(122, 92, 37, .55);
+}
+.band::after { /* satin sheen that invites a tap */
+  content: ""; position: absolute; top: 0; bottom: 0; width: 35%; left: -40%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .7), transparent);
+  animation: satin 3.6s ease-in-out infinite;
+}
+.band-r::after { animation-delay: .5s; }
+@keyframes satin { 0%, 45% { left: -40%; } 100% { left: 120%; } }
+.bow {
+  position: absolute; left: 50%; top: 79%; width: 58%; max-width: none;
+  transform: translate(-50%, -41%) translateZ(2.5px);
+  filter: drop-shadow(0 5px 6px rgba(0, 0, 0, .45));
+  transition: transform .7s cubic-bezier(.5, 0, .8, .3), opacity .45s ease .2s;
+}
+.intro.is-open .band-l { transform: translateZ(1.5px) translateX(-125%); opacity: 0; }
+.intro.is-open .band-r { transform: translateZ(1.5px) translateX(125%); opacity: 0; }
+.intro.is-open .bow { transform: translate(-50%, -41%) translateZ(2.5px) translateY(45%) scale(.6) rotate(-8deg); opacity: 0; }
+.intro:not(.is-open) .card3d:hover .bow { transform: translate(-50%, -41%) translateZ(2.5px) scale(1.04); }
+
 .seal {
-  position: absolute; left: 50%; top: 79%; width: 21%; aspect-ratio: 1;
-  transform: translate(-50%, -50%) translateZ(3px);
+  position: absolute; left: 50%; top: 79%; width: 17%; aspect-ratio: 1;
+  transform: translate(-50%, -50%) translateZ(4px);
   transition: transform .7s var(--ease-royal), opacity .5s ease;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .45));
 }
@@ -320,6 +353,7 @@ html.js .intro {
 /* opening sequence */
 .intro.is-open .card3d { animation: none; }
 .intro.is-open .seal { transform: translate(-50%, -50%) translateZ(40px) scale(1.25); opacity: 0; }
+.seal span { font-size: calc(var(--w) * .055); }
 .intro.is-open .door-left { transform: rotateY(-122deg); }
 .intro.is-open .door-right { transform: rotateY(122deg); }
 .intro.is-open .door-face, .intro.is-open .door-back { opacity: 0; }
@@ -785,7 +819,7 @@ html.lowfx .rf-corner, html.lowfx .intro-glow, html.lowfx .event-medal { animati
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
   .card3d { animation: none; transform: none; }
-  .door, .camera, .seal, .corner, .gframe i, .inner-content > *, .hero-content > * { transition-duration: .35s !important; transition-delay: 0s !important; }
+  .door, .camera, .seal, .band, .bow, .corner, .gframe i, .inner-content > *, .hero-content > * { transition-duration: .35s !important; transition-delay: 0s !important; }
   .intro.is-open .door-left, .intro.is-open .door-right { transform: none; }
   .door-face, .door-back { transition: opacity .35s ease !important; }
   .camera { transform: none !important; }

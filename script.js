@@ -31,7 +31,7 @@
   // ------------------------------------------------------------------
   const STR = {
     en: {
-      open: "Open your invitation", tapHint: "Tap the card or the button to open", skip: "Skip",
+      open: "Open your invitation", tapHint: "Tap the ribbon to open your invitation", skip: "Skip",
       walimaCelebration: "Walima Celebration", walimaWord: "Walima", scroll: "Scroll",
       date: "Date", time: "Time", venue: "Venue", amp: "&",
       tba: "To be announced", dateTba: "Date to be announced", pkt: "Pakistan Standard Time (PKT)",
@@ -67,7 +67,7 @@
       waGuests: "Number of attendees", waMessage: "Message",
     },
     ur: {
-      open: "اپنا دعوت نامہ کھولیں", tapHint: "کھولنے کے لیے کارڈ یا بٹن پر ٹیپ کریں", skip: "آگے بڑھیں",
+      open: "اپنا دعوت نامہ کھولیں", tapHint: "دعوت نامہ کھولنے کے لیے ربن پر ٹیپ کریں", skip: "آگے بڑھیں",
       walimaCelebration: "تقریبِ ولیمہ", walimaWord: "ولیمہ", scroll: "نیچے دیکھیں",
       date: "تاریخ", time: "وقت", venue: "مقام", amp: "اور",
       tba: "اعلان بعد میں کیا جائے گا", dateTba: "تاریخ کا اعلان جلد کیا جائے گا", pkt: "پاکستان کا معیاری وقت",
@@ -164,6 +164,8 @@
   const timeMatch = /^(\d{1,2}):(\d{2})$/.exec((C.event.time || "").trim());
   const dateParts = dateMatch ? { y: +dateMatch[1], m: +dateMatch[2], d: +dateMatch[3] } : null;
   const timeParts = timeMatch && +timeMatch[1] < 24 && +timeMatch[2] < 60 ? { h: +timeMatch[1], min: +timeMatch[2] } : null;
+  const endMatch = /^(\d{1,2}):(\d{2})$/.exec((C.event.endTime || "").trim());
+  const endParts = timeParts && endMatch && +endMatch[1] < 24 && +endMatch[2] < 60 ? { h: +endMatch[1], min: +endMatch[2] } : null;
   const eventStart = dateParts && timeParts
     ? Date.UTC(dateParts.y, dateParts.m - 1, dateParts.d, timeParts.h, timeParts.min) - PKT_OFFSET_MIN * 60000
     : null;
@@ -183,14 +185,14 @@
   function formatTime(l) {
     if (C.event.timeText && filled(C.event.timeText[l])) return C.event.timeText[l];
     if (!timeParts) return null;
-    const h12 = timeParts.h % 12 || 12;
-    const mm = String(timeParts.min).padStart(2, "0");
+    const clock = (p) => `${p.h % 12 || 12}:${String(p.min).padStart(2, "0")}`;
     if (l === "ur") {
       const h = timeParts.h;
       const period = h < 4 ? "رات" : h < 12 ? "صبح" : h < 15 ? "دوپہر" : h < 18 ? "سہ پہر" : h < 20 ? "شام" : "رات";
-      return `${period} ${h12}:${mm} بجے`;
+      return endParts ? `${period} ${clock(timeParts)} تا ${clock(endParts)} بجے` : `${period} ${clock(timeParts)} بجے`;
     }
-    return `${h12}:${mm} ${timeParts.h < 12 ? "AM" : "PM"}`;
+    const en = (p) => `${clock(p)} ${p.h < 12 ? "AM" : "PM"}`;
+    return endParts ? `${en(timeParts)} – ${en(endParts)}` : en(timeParts);
   }
 
   // ------------------------------------------------------------------
@@ -667,9 +669,9 @@
       intro.classList.add("is-open");
       skipBtn.hidden = false;
       landOnHero();
-      later(() => inner.classList.add("is-drawn"), 950);
-      later(() => intro.classList.add("is-settling"), 3650);
-      later(finish, 4100);
+      later(() => inner.classList.add("is-drawn"), 1200);
+      later(() => intro.classList.add("is-settling"), 3900);
+      later(finish, 4350);
     }
 
     // move the camera so the opened card lands exactly where the page's cover card sits

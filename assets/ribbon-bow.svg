@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 170">
+  <!-- Satin bow tied on the closed invitation (original artwork). Knot sits at (120,70). -->
+  <defs>
+    <linearGradient id="satin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F6E9C2"/><stop offset=".35" stop-color="#E2C88A"/>
+      <stop offset=".6" stop-color="#C4A15C"/><stop offset="1" stop-color="#9C7A39"/>
+    </linearGradient>
+    <linearGradient id="satinDark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A88646"/><stop offset="1" stop-color="#7A5C25"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g stroke="#8C6B2F" stroke-width="1.2" stroke-linejoin="round">
+    <!-- tails -->
+    <path d="M114 74 L78 160 L92 150 L100 166 L128 80 Z" fill="url(#satin)"/>
+    <path d="M126 74 L162 156 L148 148 L141 164 L112 80 Z" fill="url(#satin)"/>
+    <path d="M114 74 L88 136 L96 132 L118 80 Z" fill="url(#satinDark)" stroke="none" opacity=".35"/>
+    <!-- loops -->
+    <path d="M120 70 C96 34 46 14 24 30 C4 46 14 92 48 100 C74 106 104 90 120 70 Z" fill="url(#satin)"/>
+    <path d="M120 70 C144 34 194 14 216 30 C236 46 226 92 192 100 C166 106 136 90 120 70 Z" fill="url(#satin)"/>
+    <!-- inner folds -->
+    <path d="M120 70 C98 52 62 40 44 50 C34 58 42 78 62 82 C82 86 104 80 120 70 Z" fill="url(#satinDark)" opacity=".55"/>
+    <path d="M120 70 C142 52 178 40 196 50 C206 58 198 78 178 82 C158 86 136 80 120 70 Z" fill="url(#satinDark)" opacity=".55"/>
+    <!-- satin highlights -->
+    <path d="M36 38 C58 26 92 40 112 62" fill="none" stroke="url(#sheen)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M204 38 C182 26 148 40 128 62" fill="none" stroke="url(#sheen)" stroke-width="5" stroke-linecap="round"/>
+    <!-- knot -->
+    <rect x="104" y="54" width="32" height="32" rx="10" fill="url(#satin)"/>
+  </g>
+</svg>

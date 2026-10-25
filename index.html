@@ -26,6 +26,7 @@
   <!-- Amiri is only needed for the Bismillah, so request just those letters -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap&text=%D8%A8%D9%90%D8%B3%D9%92%D9%85%D9%90%20%D9%B1%D9%84%D9%84%D9%91%D9%8E%D9%B0%D9%87%D9%90%20%D9%B1%D9%84%D8%B1%D9%91%D9%8E%D8%AD%D9%92%D9%85%D9%8E%D9%B0%D9%86%D9%90%20%D9%B1%D9%84%D8%B1%D9%91%D9%8E%D8%AD%D9%90%D9%8A%D9%85%D9%90">
   <link rel="preload" href="assets/medallion.svg" as="image">
+  <link rel="preload" href="assets/ribbon-bow.svg" as="image">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.className = "js";</script>
   <script src="config.js" defer></script>
@@ -102,6 +103,11 @@
             <div class="door-face"><div class="front" data-front></div></div>
             <div class="door-back"></div>
           </div>
+          <!-- satin ribbon tied across the closed card; it unties when tapped -->
+          <div class="ribbon" aria-hidden="true">
+            <i class="band band-l"></i><i class="band band-r"></i>
+            <img class="bow" src="assets/ribbon-bow.svg" alt="">
+          </div>
           <div class="seal"><img src="assets/medallion.svg" alt=""><span lang="ur">و</span></div>
         </div>
         <div class="card-shadow" aria-hidden="true"></div>
@@ -110,7 +116,7 @@
 
     <div class="intro-actions">
       <button class="btn btn-gold btn-open" id="open-btn" type="button"><span data-t="open">Open your invitation</span></button>
-      <p class="intro-hint" data-t="tapHint">Tap the card or the button</p>
+      <p class="intro-hint" data-t="tapHint">Tap the ribbon to open your invitation</p>
     </div>
     <button class="btn-skip" id="skip-btn" type="button" hidden data-t="skip">Skip</button>
   </div>

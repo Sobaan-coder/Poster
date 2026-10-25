@@ -78,7 +78,8 @@ window.WALIMA_CONFIG = {
      ------------------------------------------------------------------ */
   event: {
     date: "2026-11-13", // Friday, 13 November 2026
-    time: "",
+    time: "20:30",    // dinner starts 8:30 PM
+    endTime: "21:00", // optional end time, "HH:MM" (shown as 8:30 PM – 9:00 PM)
     dateText: { en: "", ur: "" },
     timeText: { en: "", ur: "" },
   },
@@ -93,12 +94,12 @@ window.WALIMA_CONFIG = {
                (it only loads when they tap "Show map").
      ------------------------------------------------------------------ */
   venue: {
-    name: { en: "", ur: "" },
+    name: { en: "Dhok Dhaki", ur: "" }, // add the Urdu spelling in ur once confirmed
     address: { en: "", ur: "" },
     mapsUrl: "",
     lat: null,
     lng: null,
-    showEmbeddedMap: true,
+    showEmbeddedMap: false, // turn on once mapsUrl or lat/lng give an exact pin
   },
 
   /* ------------------------------------------------------------------
@@ -170,7 +171,7 @@ window.WALIMA_CONFIG = {
       invitationLead:
         "With the blessings of Allah Almighty and the love and prayers of our family, we cordially invite you to celebrate the Walima of",
       invitationClose: "Your presence and prayers will make this blessed occasion even more memorable.",
-      eventTitle: "Walima Celebration",
+      eventTitle: "Walima Dinner",
       closingTitle: "Your Presence Is Our Greatest Gift",
       closingLine: "Looking forward to celebrating this blessed occasion with you.",
     },
